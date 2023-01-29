@@ -13,13 +13,16 @@
         accessToken: 'pk.eyJ1IjoiYXBhcmVkZXN2IiwiYSI6ImNsZGN0Y2p2ZjBkZWkzdnF6N2xtcWk5dGEifQ.N3uTO28R-jxySVpGXNxCXg'
     }).addTo(map);
 
-    // Crear una marca i afegir-la al mapa
-    var marker = L.marker([41.7692525, 2.2517162]).addTo(map);
+    var marker;
+    @foreach($coordinates as $coordinate)
 
-    marker.bindPopup('<img class="img" src="https://upload.wikimedia.org/wikipedia/commons/1/14/Spain.Aiguafreda.Panoramica.2.jpeg">');
+        marker = L.marker(['{{$coordinate->latitude}}', '{{$coordinate->longitude}}']).addTo(map);
 
-    // var marker = L.marker([41.7692525, 2.2517162]).addTo(map);
-    // marker.bindPopup("<form><label>Nom:</label><input type='date'><br><label>foto:</label><input type='file'><br><input type='submit' value='Enviar'></form>").openPopup();
+        marker.bindPopup('<div><ul><li>pictures: {{ $coordinate->pictures->count() }}</li></ul><button onclick="showCoordinateInfo({{ $coordinate->id }})" class="bg-indigo-500 hover:bg-indigo-600 w-full text-white font-medium py-2 px-4 rounded-md">details</button></div>');
+
+        // marker.bindPopup('<img class="img" src="{{ url("storage/img/".$userFolder."/".$coordinate->pictures->first()->picture) }}">');
+
+    @endforeach
 
     map.on('click', function(e) {
         console.log(e);

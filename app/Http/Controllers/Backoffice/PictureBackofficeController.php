@@ -26,5 +26,7 @@ class PictureBackofficeController extends BackofficeController
 
             PictureLibrary::insert($newPicture, $newCoordinate->id, Auth::id(), $request->input('name'), $request->input('date'));
         }
+
+        return redirect()->route('backoffice.home');
     }
 }

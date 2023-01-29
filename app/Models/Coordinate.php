@@ -16,4 +16,9 @@ class Coordinate extends Model
         'longitude',
         'created_by'
     ];
+
+    public function pictures()
+    {
+        return $this->HasMany(Picture::class, 'id_coordinate', 'id');
+    }
 }

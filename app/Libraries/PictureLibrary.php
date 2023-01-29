@@ -16,15 +16,15 @@ class PictureLibrary
             return abort(500, 'Invalid file type selected. <br /> Allowed file types are (WEBP, JPG, PNG)');;
         }
 
-        $picture = $folderPath.'/'.$fileName;
         $uploadedFile = self::uploadFile($file, $folderPath, $fileName);
 
         if($uploadedFile)
         {
+            $picture = $folderPath.'/'.$fileName;
             Image::make($picture)->save($picture, 60);
         }
 
-        return $picture;
+        return $fileName;
     }
 
     static function uploadFile($file, $path, $fileName)

@@ -18,4 +18,9 @@ class Picture extends Model
         'name',
         'date'
     ];
+
+    public function coordinate()
+    {
+        return $this->belongsTo(Coordinate::class, 'id', 'id_coordinate');
+    }
 }

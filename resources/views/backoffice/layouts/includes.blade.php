@@ -8,4 +8,10 @@
 
     }
 
+    function showCoordinateInfo(coordinateId) {
+
+        console.log(coordinateId);
+
+    }
+
 </script>

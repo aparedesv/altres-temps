@@ -12,7 +12,12 @@
 
         <div class="w-1/4 bg-slate-200">
 
-            <div id="upload-photo" class="hidden">
+            <div
+                id="upload-photo"
+                @if(!$errors->any())
+                    class="hidden"
+                @endif
+            >
 
                 <form class="m-2 p-2" action="{{ route('backoffice.upload.photo') }}" method="POST" enctype="multipart/form-data">
 
@@ -74,7 +79,38 @@
 
             </div>
 
-        </div>s
+            <div
+                id="coordinate-info"
+                class="hidden"
+            >
+
+                <form class="m-2 p-2">
+
+                    <div class="rounded-md my-2">
+                        <label>latitude</label>
+                        <input
+                            name="latitude"
+                            type="text"
+                            value=""
+                            class="form-input w-full bg-slate-200 py-2 px-3 pr-4 rounded-md focus:outline-none focus:shadow-outline-blue-500"
+                        >
+                    </div>
+
+                    <div class="rounded-md my-2">
+                        <label>longitude</label>
+                        <input
+                            name="longitude"
+                            type="text"
+                            value=""
+                            class="form-input w-full bg-slate-200 py-2 px-3 pr-4 rounded-md focus:outline-none focus:shadow-outline-blue-500"
+                        >
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
 
     </div>
 
