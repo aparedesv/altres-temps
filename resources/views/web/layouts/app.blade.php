@@ -31,6 +31,8 @@
 
     </div>
 
+    @include('web.layouts.includes')
+
     @stack('scripts')
 
 </body>

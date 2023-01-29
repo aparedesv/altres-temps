@@ -10,7 +10,7 @@
         id: 'mapbox/streets-v11',
         tileSize: 512,
         zoomOffset: -1,
-        accessToken: 'pk.eyJ1IjoiYXBhcmVkZXN2IiwiYSI6ImNsYXdjZzZ2bDA1cTIzcHA3ZHdxZHN3cXMifQ.4DkdrzsbMZHBWO6nZahcBw'
+        accessToken: 'pk.eyJ1IjoiYXBhcmVkZXN2IiwiYSI6ImNsZGN0Y2p2ZjBkZWkzdnF6N2xtcWk5dGEifQ.N3uTO28R-jxySVpGXNxCXg'
     }).addTo(map);
 
     // Crear una marca i afegir-la al mapa

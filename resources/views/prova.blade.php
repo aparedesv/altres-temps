@@ -1,4 +1,14 @@
-<div class="container mx-auto px-2">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    @vite(['resources/css/app.css'])
+</head>
+<body>
+    <div class="container mx-auto px-2">
     <nav class="bg-gray-800">
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
@@ -101,3 +111,21 @@
 </nav>
 
     </div>
+    <div class="container mx-auto px-2">
+        <h1 class="bg-gray-400">hola</h1>
+    </div>
+</body>
+</html>
+
+<script>
+
+    function toogleMenu(menuId) {
+
+        var el = document.getElementById(menuId);
+
+        el.classList.toggle("hidden");
+
+    }
+
+</script>
+
