@@ -22,7 +22,9 @@
     // marker.bindPopup("<form><label>Nom:</label><input type='date'><br><label>foto:</label><input type='file'><br><input type='submit' value='Enviar'></form>").openPopup();
 
     map.on('click', function(e) {
-        console.log(e.latlng);
+        console.log(e);
+        document.getElementById('upload-photo-latitude').value = e.latlng.lat;
+        document.getElementById('upload-photo-longitude').value = e.latlng.lng;
         document.getElementById('upload-photo').classList.toggle("hidden");
     });
 

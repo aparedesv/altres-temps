@@ -13,23 +13,23 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('coordenades_anys', function (Blueprint $table) {
+        Schema::create('coordinates_years', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_coordenades');
-            $table->unsignedBigInteger('id_any');
+            $table->unsignedBigInteger('id_coordinate');
+            $table->unsignedBigInteger('id_year');
             $table->timestamps();
             $table->softDeletes();
 
             // Foreign key
-            $table->foreign('id_coordenades')
+            $table->foreign('id_coordinate')
                 ->references('id')
-                ->on('coordenades')
+                ->on('coordinates')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 
-            $table->foreign('id_any')
+            $table->foreign('id_year')
                 ->references('id')
-                ->on('anys')
+                ->on('years')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
         });

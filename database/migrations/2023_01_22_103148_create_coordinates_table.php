@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('coordenades', function (Blueprint $table) {
+        Schema::create('coordinates', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('created_by');
-            $table->string('longitud');
-            $table->string('latitud');
+            $table->string('latitude');
+            $table->string('longitude');
             $table->timestamps();
             $table->softdeletes();
 
@@ -37,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('coordenades');
+        Schema::dropIfExists('coordinates');
     }
 };

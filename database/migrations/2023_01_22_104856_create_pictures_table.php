@@ -13,20 +13,21 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('imatges', function (Blueprint $table) {
+        Schema::create('pictures', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_user');
-            $table->unsignedBigInteger('id_coordenades');
-            $table->string('imatge');
-            $table->date('data');
-            $table->boolean('publica')->default(TRUE);
+            $table->unsignedBigInteger('id_coordinate');
+            $table->string('picture');
+            $table->string('name')->nullable();
+            $table->date('date');
+            $table->boolean('public')->default(TRUE);
             $table->timestamps();
             $table->softDeletes();
 
             // Foreign key
-            $table->foreign('id_coordenades')
+            $table->foreign('id_coordinate')
                 ->references('id')
-                ->on('coordenades')
+                ->on('coordinates')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 
@@ -45,6 +46,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('imatges');
+        Schema::dropIfExists('pictures');
     }
 };

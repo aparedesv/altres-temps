@@ -11,4 +11,7 @@ return [
     // backoffice views
     'VIEW_BACKOFFICE_HOME' => 'backoffice.home.',
 
+    // fileMimeTypeAllowed
+    'FILE_MIME_TYPE_ALLOWED' => ['image/webp', 'image/jpeg', 'image/png'],
+
 ];

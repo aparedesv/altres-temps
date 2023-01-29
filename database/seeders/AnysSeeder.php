@@ -19,10 +19,10 @@ class AnysSeeder extends Seeder
 
         while ($year < $lastYear)
         {
-            DB::table('anys')->insert([
+            DB::table('years')->insert([
 
                 [
-                    'any' => $year
+                    'year' => $year
                 ],
 
             ]);
