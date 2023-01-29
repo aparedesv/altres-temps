@@ -19,7 +19,7 @@
                     <div class="rounded-md shadow-sm my-2">
                         <label>imatge</label>
                         <br>
-                        <input type="file" accept="image/*" class="form-input py-2 px-3 pr-4 rounded-md focus:outline-none focus:shadow-outline-blue-500">
+                        <input type="file" accept="image/*" class="form-input w-full bg-slate-200 py-2 px-3 pr-4 rounded-md focus:outline-none focus:shadow-outline-blue-500">
                     </div>
 
                     <div class="rounded-md shadow-sm my-2">
@@ -36,37 +36,22 @@
                         <label>títol</label>
                         <input type="text" class="form-input w-full bg-slate-200 py-2 px-3 pr-4 rounded-md focus:outline-none focus:shadow-outline-blue-500">
                     </div>
+
+                    <div class="mt-4">
+
+                        <button class="bg-indigo-500 hover:bg-indigo-600 w-full text-white font-medium py-2 px-4 rounded-md">
+                            upload image
+                        </button>
+
+                    </div>
+
                 </form>
 
             </div>
 
-        </div>
+        </div>s
 
     </div>
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-
-                <div class="mb-3">
-                    <label for="formFile" class="form-label">Default file input example</label>
-                    <input class="form-control" type="file" id="formFile">
-                  </div>
-
-
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
 
     @push('scripts')
 

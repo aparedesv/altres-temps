@@ -8,4 +8,7 @@ return [
     // web views
     'VIEW_WEB_HOME' => 'web.home.',
 
+    // backoffice views
+    'VIEW_BACKOFFICE_HOME' => 'backoffice.home.',
+
 ];

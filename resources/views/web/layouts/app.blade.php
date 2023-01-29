@@ -18,7 +18,7 @@
 
 <body>
 
-    <div id="app" class="mx-auto px-2">
+    <div id="app" class="mx-auto p-0">
 
         @include('web.layouts.topbar')
 
