@@ -23,13 +23,7 @@
 
     map.on('click', function(e) {
         console.log(e.latlng);
-
-        var options = {}
-
-        const myModal = new bootstrap.Modal(document.getElementById('exampleModal'), options)
-
-        myModal.show()
-
+        document.getElementById('hola').classList.toggle("hidden");
     });
 
 </script>

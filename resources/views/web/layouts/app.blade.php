@@ -6,7 +6,6 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    @include('layouts.head')
     @include('web.layouts.head')
 
     @if(isset($view) && view()->exists($view.'head'))
@@ -19,11 +18,11 @@
 
 <body>
 
-    <div id="app" class="m-0 p-0">
+    <div id="app" class="mx-auto px-2">
 
         @include('web.layouts.topbar')
 
-        <main class="p-0 m-0">
+        <main id="content" class="p-0 m-0">
 
             @yield('content')
 
