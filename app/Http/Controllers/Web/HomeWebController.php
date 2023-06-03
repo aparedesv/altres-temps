@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\Models\Coordinate;
 use Illuminate\Http\Request;
 use App\Helpers\LocationHelper;
 use App\Libraries\CoordinateLibrary;
@@ -30,5 +31,10 @@ class HomeWebController extends WebController
         $data['marks'] = CoordinateLibrary::index();
 
         return view('web.home.home', $data);
+    }
+
+    public function show(Coordinate $coordinate)
+    {
+        return Coordinate::find($coordinate->id)->with('pictures')->first();
     }
 }

@@ -39,6 +39,8 @@
                 geometry: new Geom.Point(Proj.fromLonLat([mark.longitude, mark.latitude]))
             });
 
+            feature.id = mark.id;
+
             // Aplica l'estil a la característica
             feature.setStyle(style);
 
@@ -53,6 +55,30 @@
         });
 
         map.addLayer(layer);
+
+        map.on("click", function(e) {
+            map.forEachFeatureAtPixel(e.pixel, function (feature, layer) {
+
+                if(feature.id) {
+
+                    console.log(feature.id);
+
+                    (async () => {
+                        const rawResponse = await fetch("{{ route('get.fotos.coordenades', 2) }}", {
+                            method: 'POST',
+                            headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json',
+                            "X-CSRF-Token": '{{ csrf_token() }}'
+                            }
+                        });
+                        const content = await rawResponse.json();
+
+                        console.log(content);
+                    })();
+                }
+            })
+        });
     }
 
 </script>

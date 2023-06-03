@@ -25,6 +25,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [HomeWebController::class, 'index'])->name('home');
+Route::post('/get-fotos-coordenades/{coordinate}', [HomeWebController::class, 'show'])->name('get.fotos.coordenades');
 
 Route::middleware('auth')->group(function () {
     Route::get('verify-email', EmailVerificationPromptController::class)
