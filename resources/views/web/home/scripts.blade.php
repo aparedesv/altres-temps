@@ -2,7 +2,7 @@
 
     function init() {
 
-        const center = new OLProj.fromLonLat([2.25179, 41.76863]);
+        const center = new OLProj.fromLonLat([{{ $lon }}, {{ $lat }}]);
 
         const map = new OLMap({
             layers: [
@@ -13,7 +13,7 @@
             target: 'map',
             view: new OLView({
                 center: center,
-                zoom: 14,
+                zoom: {{ OSM_ZOOM_DEFAULT }},
             }),
         });
     }
