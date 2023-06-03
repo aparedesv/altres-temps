@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Web;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\WebController;
 use App\Helpers\LocationHelper;
+use App\Libraries\CoordinateLibrary;
+use App\Http\Controllers\WebController;
 
 class HomeWebController extends WebController
 {
@@ -24,6 +25,9 @@ class HomeWebController extends WebController
             $data['lat'] = $geolocalitzacio['lat'];
             $data['lon'] = $geolocalitzacio['lon'];
         }
+
+        // obtenim les coordenades existents
+        $data['marks'] = CoordinateLibrary::index();
 
         return view('web.home.home', $data);
     }
