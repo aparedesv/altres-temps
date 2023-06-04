@@ -30,7 +30,7 @@ class UploadPhoto extends Component
         $this->photo->storeAs('/public/coordinates/'.$this->coordinateId.'/pictures', $nom);
 
         PictureLibrary::insert(
-            '/public/coordinates/'.$this->coordinateId.'/pictures/'.$nom,
+            '/storage/coordinates/'.$this->coordinateId.'/pictures/'.$nom,
             $this->coordinateId,
             Auth::id(),
             $this->name,

@@ -1,50 +1,55 @@
-<div id="user-photo-screen" class="animate__animated d-none">
+<div id="my-photos" class="w-100 py-4 text-white table-responsive">
 
-    <div class="d-flex justify-content-end">
+    <label class="fs-4">les meves fotos</label>
 
-        <button class="btn btn-link" onclick="hideUserPhotoScreen()">
+    <table class="table table-sm table-borderless">
 
-            <i class="bi bi-x-circle h2 text-white"></i>
+        <thead>
 
-        </button>
+            <tr>
 
-    </div>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
 
-    <div class="row d-flex justify-content-center">
+            </tr>
 
-        <div class="col-md-6">
+        </thead>
 
-            <livewire:coordinate-info />
+        <tbody>
 
-        </div>
+            @foreach(Auth::user()->pictures as $picture)
 
-    </div>
+                <tr>
+
+                    <td>
+                        <button class="btn">
+                            <i class="bi bi-trash text-white"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn" onclick="livewire.emit('showCoordinateInfo', {{ $picture->id_coordinate }});showPhotoScreen()">
+                            <i class="bi bi-camera text-white"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn text-white">
+                            {{ $picture->date }}
+                        </button>
+                    </td>
+                    <td class="ellipsis">
+                        <button class="btn text-white">
+                            {{ $picture->name }}
+                        </button>
+                    </td>
+
+                </tr>
+
+            @endforeach
+
+        </tbody>
+
+    </table>
 
 </div>
-
-@push('scripts')
-
-    <script>
-
-        function showUserPhotoScreen() {
-
-            document.querySelector('#user-photo-screen').classList.remove('d-none')
-            document.querySelector('#user-photo-screen').classList.add('animate__fadeInRight')
-            document.querySelector('#user-photo-screen').classList.remove('animate__fadeOutRight')
-        }
-
-        function hideUserPhotoScreen() {
-
-            document.querySelector('#user-photo-screen').classList.add('animate__fadeOutRight')
-            document.querySelector('#user-photo-screen').classList.remove('animate__fadeInRight')
-
-            setTimeout(() => {
-
-                document.querySelector('#user-photo-screen').classList.add('d-none')
-            }, 1000);
-
-        }
-
-    </script>
-
-@endpush

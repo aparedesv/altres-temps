@@ -42,7 +42,8 @@
     }
 }
 
-#user-photo-screen {
+#user-photo-screen,
+#photo-screen {
     width: 50dvw;
     height: 100dvh;
     position: absolute;
@@ -50,4 +51,25 @@
     background: #00758D;
     top: 0;
     right: 0;
+
+    .nav-tabs .nav-link.active {
+        background-color: initial !important;
+        color: white !important;
+    }
+
+    #my-photos {
+
+        .table {
+            --bs-body-bg: transparent;
+            background-color: var(--bs-body-bg);
+        }
+
+        .ellipsis button {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 20dvw;
+        }
+    }
+
 }

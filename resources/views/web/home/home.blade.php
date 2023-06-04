@@ -12,7 +12,7 @@
 
     @if(Auth::check())
 
-        @include('backoffice.user.photos')
+        @include('backoffice.user.admin')
 
     @endif
 

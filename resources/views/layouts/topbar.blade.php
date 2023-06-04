@@ -34,12 +34,8 @@
 
                         <div class="ms-4">
 
-                            <button class="btn text-dark">
-                                {{ Auth::user()->name }}
-                            </button>
-
                             <button class="btn text-dark" onclick="showUserPhotoScreen()">
-                                <i class="bi bi-upload text-dark h4"></i>
+                                {{ Auth::user()->name }}
                             </button>
 
                             <button

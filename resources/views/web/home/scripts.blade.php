@@ -4,7 +4,7 @@
 
         const center = new Proj.fromLonLat([{{ $lon }}, {{ $lat }}]);
 
-        const map = new Map({
+        const map = new OlMap({
             layers: [
                 new TileLayer({
                     source: new OSM(),
@@ -67,6 +67,7 @@
                     @if(Auth::check())
 
                         livewire.emit('showCoordinateInfo', feature.id);
+                        showPhotoScreen();
 
                     @endif
 

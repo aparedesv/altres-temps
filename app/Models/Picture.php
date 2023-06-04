@@ -22,6 +22,11 @@ class Picture extends Model
 
     protected $appends = ['carbonDate'];
 
+    public function user()
+    {
+        return $this->belongsTo(Coordinate::class, 'id', 'id_user');
+    }
+
     public function coordinate()
     {
         return $this->belongsTo(Coordinate::class, 'id', 'id_coordinate');
