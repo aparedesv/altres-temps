@@ -7,8 +7,12 @@
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
 @import "bootstrap-icons/font/bootstrap-icons.css";
+
 // Open Layers
 @import 'ol/ol.css';
+
+// animate css
+@import 'animate.css';
 
 #topbar {
     height: 10dvh;
@@ -36,4 +40,14 @@
         text-overflow: ellipsis;
         max-width: 100%;
     }
+}
+
+#user-photo-screen {
+    width: 50dvw;
+    height: 100dvh;
+    position: absolute;
+    z-index: 9999;
+    background: #00758D;
+    top: 0;
+    right: 0;
 }

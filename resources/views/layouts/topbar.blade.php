@@ -2,7 +2,7 @@
 
     <nav class="navbar navbar-light">
 
-        <div class="container">
+        <div class="container-fluid">
 
             <a class="navbar-brand" href="#">
 
@@ -34,16 +34,20 @@
 
                         <div class="ms-4">
 
-                            <a href="#" class="text-decoration-none text-dark align-top">
+                            <button class="btn text-dark">
                                 {{ Auth::user()->name }}
-                            </a>
+                            </button>
 
-                            <a
-                                class="text-decoration-none text-white ps-2" href="{{ route('logout') }}"
+                            <button class="btn text-dark" onclick="showUserPhotoScreen()">
+                                <i class="bi bi-upload text-dark h4"></i>
+                            </button>
+
+                            <button
+                                class="btn ps-2"
                                 onclick="event.preventDefault();document.getElementById('logout-form').submit();"
                             >
                                 <i class="bi bi-box-arrow-right text-dark h4"></i>
-                            </a>
+                            </button>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf

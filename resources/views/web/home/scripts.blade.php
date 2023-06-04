@@ -64,6 +64,12 @@
                     console.log(feature.id);
                     livewire.emit('showCoordinatePhotos', feature.id);
 
+                    @if(Auth::check())
+
+                        livewire.emit('showCoordinateInfo', feature.id);
+
+                    @endif
+
                     /* (async () => {
                         const rawResponse = await fetch("{{ route('get.fotos.coordenades', 2) }}", {
                             method: 'POST',

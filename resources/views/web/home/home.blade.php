@@ -10,6 +10,12 @@
 
     </div>
 
+    @if(Auth::check())
+
+        @include('backoffice.user.photos')
+
+    @endif
+
 @endsection
 
 @push('scripts')
