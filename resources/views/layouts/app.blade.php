@@ -5,6 +5,8 @@
 
         @include('layouts.head')
 
+        @livewireStyles
+
     </head>
 
     <body onload="init()">
@@ -20,6 +22,8 @@
             </main>
 
         </div>
+
+        @livewireScripts
 
         @stack('scripts')
 

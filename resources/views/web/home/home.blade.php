@@ -4,8 +4,11 @@
 
     <div id="map"></div>
 
-    <!-- amb livewire?? -->
-    <div id="fotos"></div>
+    <div id="fotos">
+
+        <livewire:coordinate-photos />
+
+    </div>
 
 @endsection
 

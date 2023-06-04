@@ -62,8 +62,9 @@
                 if(feature.id) {
 
                     console.log(feature.id);
+                    livewire.emit('showCoordinatePhotos', feature.id);
 
-                    (async () => {
+                    /* (async () => {
                         const rawResponse = await fetch("{{ route('get.fotos.coordenades', 2) }}", {
                             method: 'POST',
                             headers: {
@@ -75,7 +76,8 @@
                         const content = await rawResponse.json();
 
                         console.log(content);
-                    })();
+
+                    })(); */
                 }
             })
         });
