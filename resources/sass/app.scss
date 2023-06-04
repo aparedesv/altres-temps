@@ -6,6 +6,7 @@
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+@import "bootstrap-icons/font/bootstrap-icons.css";
 // Open Layers
 @import 'ol/ol.css';
 
@@ -14,6 +15,10 @@
 
     .navbar {
         height: 100%;
+
+        .navbar-brand img {
+            max-width: 200px;
+        }
     }
 }
 
