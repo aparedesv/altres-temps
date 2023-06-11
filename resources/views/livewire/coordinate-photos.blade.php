@@ -1,4 +1,5 @@
-<div class="m-0 row">
+<div class="m-0 row slick">
+
     @if ($coordinate && !empty($coordinate->pictures))
 
         @foreach($coordinate->pictures as $picture)
@@ -8,9 +9,10 @@
                 <div class="w-100 position-relative">
 
                     <a
-                        class="btn my-lightbox-toggle"
+                        class="btn bs5-lightbox"
                         href="{{ $picture->picture }}"
                         data-toggle="lightbox"
+                        data-gallery="example-gallery"
                         data-caption="{{ $picture->name }}"
                     >
                         <img src="{{ $picture->picture }}" alt="{{ $picture->name }}" class="img-fluid img-thumbnail">
@@ -26,12 +28,24 @@
 
             </div>
 
+
         @endforeach
+
+        <script>
+
+            document.querySelectorAll('.bs5-lightbox').forEach((el) => el.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lightbox = new Lightbox(el);
+                lightbox.show();
+            }));
+
+        </script>
 
     @else
 
         <p>No s'ha seleccionat cap objecte.</p>
 
     @endif
+
 </div>
 

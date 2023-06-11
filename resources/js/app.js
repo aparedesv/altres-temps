@@ -29,6 +29,6 @@ window.Icon = Icon;
 import Swal from 'sweetalert2'
 window.Swal = Swal;
 
-import * as Lightbox from 'bs5-lightbox';
+import Lightbox from 'bs5-lightbox';
 window.Lightbox = Lightbox;
 
