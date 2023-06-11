@@ -1,4 +1,4 @@
-<form wire:submit.prevent="save">
+<form wire:submit.prevent="insert">
 
     <label class="fs-1">Afegir foto</label>
 

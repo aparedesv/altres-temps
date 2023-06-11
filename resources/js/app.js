@@ -25,3 +25,10 @@ window.Overlay = Overlay;
 window.Geom = Geom;
 window.Style = Style;
 window.Icon = Icon;
+
+import Swal from 'sweetalert2'
+window.Swal = Swal;
+
+import * as Lightbox from 'bs5-lightbox';
+window.Lightbox = Lightbox;
+

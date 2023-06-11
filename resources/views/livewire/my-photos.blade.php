@@ -20,19 +20,24 @@
 
         <tbody>
 
-            @foreach(Auth::user()->pictures as $picture)
+            @foreach($pictures as $picture)
 
                 <tr>
 
                     <td>
-                        <button class="btn" onclick="deletePhoto()">
+                        <button class="btn" onclick="deletePhoto( {{ $picture->id }} )">
                             <i class="bi bi-trash text-white"></i>
                         </button>
                     </td>
                     <td>
-                        <button class="btn" onclick="livewire.emit('showCoordinateInfo', {{ $picture->id_coordinate }});showPhotoScreen()">
+                        <a
+                            class="btn"
+                            href="{{ $picture->picture }}"
+                            data-toggle="lightbox"
+                            data-caption="{{ $picture->name }}"
+                        >
                             <i class="bi bi-camera text-white"></i>
-                        </button>
+                        </a>
                     </td>
                     <td>
                         <button class="btn" onclick="livewire.emit('showCoordinateInfo', {{ $picture->id_coordinate }});showPhotoScreen()">
@@ -40,7 +45,7 @@
                         </button>
                     </td>
                     <td>
-                        <button class="btn text-white">
+                        <button class="btn text-white" onclick="livewire.emit('editPhoto', {{ $picture->id }})">
                             {{ $picture->date }}
                         </button>
                     </td>
@@ -64,7 +69,9 @@
 
     <script>
 
-        function deletePhoto() {
+        function deletePhoto(photoId) {
+
+            console.log('hola');
 
             Swal.fire({
                 title: 'Are you sure?',
@@ -76,11 +83,7 @@
                 confirmButtonText: 'Yes, delete it!',
             }).then((result) => {
                 if (result.isConfirmed) {
-                    Swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
-                    )
+                    livewire.emit('deletePhoto', photoId);
                 }
             })
 

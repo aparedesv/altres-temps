@@ -57,6 +57,7 @@
         map.addLayer(layer);
 
         map.on("click", function(e) {
+
             map.forEachFeatureAtPixel(e.pixel, function (feature, layer) {
 
                 if(feature.id) {

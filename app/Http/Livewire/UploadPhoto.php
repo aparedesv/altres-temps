@@ -17,7 +17,7 @@ class UploadPhoto extends Component
     public $name;
     public $date;
 
-    public function save()
+    public function insert()
     {
         $this->validate([
 

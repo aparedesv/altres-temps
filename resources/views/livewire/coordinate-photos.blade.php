@@ -7,23 +7,14 @@
 
                 <div class="w-100 position-relative">
 
-                    <img src="https://osonaweb.cat/assets/img/favicon.png" class="img-fluid img-thumbnail">
-
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary"> {{ $picture->carbonDate->format('Y') }} </span>
-
-                    <div>
-                        <p class="mb-0"> {{ $picture->name }} </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-sm-2 p-4">
-
-                <div class="w-100 position-relative">
-
-                    <img src="https://osonaweb.cat/assets/img/logo_osonaweb.png" class="img-fluid img-thumbnail">
+                    <a
+                        class="btn my-lightbox-toggle"
+                        href="{{ $picture->picture }}"
+                        data-toggle="lightbox"
+                        data-caption="{{ $picture->name }}"
+                    >
+                        <img src="{{ $picture->picture }}" alt="{{ $picture->name }}" class="img-fluid img-thumbnail">
+                    </a>
 
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary"> {{ $picture->carbonDate->format('Y') }} </span>
 

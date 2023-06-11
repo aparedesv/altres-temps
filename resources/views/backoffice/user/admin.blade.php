@@ -36,7 +36,7 @@
 
             <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
 
-                @include('backoffice.user.photos')
+                <livewire:my-photos/>
 
             </div>
             <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
@@ -73,7 +73,11 @@
 
             <div class="col-md-6">
 
-                <livewire:coordinate-info />
+                @if(session('screen') == 'picture')
+                    <livewire:my-photos />
+                @else
+                    <livewire:coordinate-info />
+                @endif
 
             </div>
 
