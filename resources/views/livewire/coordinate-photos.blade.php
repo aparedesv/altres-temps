@@ -1,10 +1,10 @@
-<div class="m-0 row slick">
+<div class="slick-carousel">
 
     @if ($coordinate && !empty($coordinate->pictures))
 
         @foreach($coordinate->pictures as $picture)
 
-            <div class="col-sm-2 p-4">
+            <div class="p-4">
 
                 <div class="w-100 position-relative">
 
@@ -31,13 +31,20 @@
 
         @endforeach
 
-        <script>
+        <script id="lightbox-script" type="text/javascript">
 
             document.querySelectorAll('.bs5-lightbox').forEach((el) => el.addEventListener('click', (e) => {
                 e.preventDefault();
                 const lightbox = new Lightbox(el);
                 lightbox.show();
             }));
+
+            $('.slick-carousel').slick({
+                draggable: false,
+                infinite: false,
+                slidesToShow: 6,
+                slidesToScroll: 1
+            });
 
         </script>
 
@@ -48,4 +55,20 @@
     @endif
 
 </div>
+
+<style>
+    .slick-slider {
+        width: calc(100% - 100px);
+        margin: 0 auto;
+    }
+    .slick-prev:before {
+        color: red;
+    }
+    .slick-next:before {
+        color: red;
+    }
+    .slick-carousel .slick-slide:last-child {
+        display: none;
+    }
+</style>
 

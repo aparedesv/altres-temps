@@ -15,6 +15,7 @@
                 center: center,
                 zoom: {{ OSM_ZOOM_DEFAULT }},
             }),
+            interactions: Interaction.defaults({doubleClickZoom: false})
         });
 
         // Defineix l'estil amb una icona personalitzada
@@ -71,23 +72,30 @@
                         showPhotoScreen();
 
                     @endif
-
-                    /* (async () => {
-                        const rawResponse = await fetch("{{ route('get.fotos.coordenades', 2) }}", {
-                            method: 'POST',
-                            headers: {
-                            'Accept': 'application/json',
-                            'Content-Type': 'application/json',
-                            "X-CSRF-Token": '{{ csrf_token() }}'
-                            }
-                        });
-                        const content = await rawResponse.json();
-
-                        console.log(content);
-
-                    })(); */
                 }
             })
+        });
+
+        map.on("dblclick", function(e) {
+
+            if (e.originalEvent.ctrlKey) {
+
+                console.log(e.coordinate);
+
+                var markers = new Layer.Vector({
+                    source: new Source.Vector(),
+                    style: new Style({
+                        image: new Icon({
+                            src: "{{ asset('storage/img/icon.png') }}",
+                            scale: 0.8,
+                        })
+                    })
+                });
+                map.addLayer(markers);
+
+                var marker = new Feature(new Geom.Point(Proj.fromLonLat([2.2931, 48.8584])));
+                markers.getSource().addFeature(marker);
+            }
         });
     }
 

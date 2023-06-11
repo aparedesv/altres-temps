@@ -12,6 +12,7 @@ import Overlay from 'ol/Overlay.js';
 import * as Geom from 'ol/geom';
 import Style from 'ol/style/Style';
 import Icon from 'ol/style/Icon';
+import * as Interaction from 'ol/interaction';
 
 window.OlMap = OlMap;
 window.OSM = OSM;
@@ -25,10 +26,10 @@ window.Overlay = Overlay;
 window.Geom = Geom;
 window.Style = Style;
 window.Icon = Icon;
+window.Interaction = Interaction;
 
 import Swal from 'sweetalert2'
 window.Swal = Swal;
 
 import Lightbox from 'bs5-lightbox';
 window.Lightbox = Lightbox;
-
