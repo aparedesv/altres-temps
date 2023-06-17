@@ -80,7 +80,7 @@
 
             if (e.originalEvent.ctrlKey) {
 
-                console.log(e.coordinate);
+                var coordinate = Proj.transform(e.coordinate, 'EPSG:3857', 'EPSG:4326');
 
                 var markers = new Layer.Vector({
                     source: new Source.Vector(),
@@ -93,7 +93,7 @@
                 });
                 map.addLayer(markers);
 
-                var marker = new Feature(new Geom.Point(Proj.fromLonLat([2.2931, 48.8584])));
+                var marker = new Feature(new Geom.Point(Proj.fromLonLat([coordinate[0], coordinate[1]])));
                 markers.getSource().addFeature(marker);
             }
         });
