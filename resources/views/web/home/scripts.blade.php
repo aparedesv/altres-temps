@@ -76,27 +76,32 @@
             })
         });
 
-        map.on("dblclick", function(e) {
+        @auth
+            map.on("dblclick", function(e) {
 
-            if (e.originalEvent.ctrlKey) {
+                if (e.originalEvent.ctrlKey) {
 
-                var coordinate = Proj.transform(e.coordinate, 'EPSG:3857', 'EPSG:4326');
+                    var coordinate = Proj.transform(e.coordinate, 'EPSG:3857', 'EPSG:4326');
 
-                var markers = new Layer.Vector({
-                    source: new Source.Vector(),
-                    style: new Style({
-                        image: new Icon({
-                            src: "{{ asset('storage/img/icon.png') }}",
-                            scale: 0.8,
+                    var markers = new Layer.Vector({
+                        source: new Source.Vector(),
+                        style: new Style({
+                            image: new Icon({
+                                src: "{{ asset('storage/img/icon.png') }}",
+                                scale: 0.8,
+                            })
                         })
-                    })
-                });
-                map.addLayer(markers);
+                    });
+                    map.addLayer(markers);
 
-                var marker = new Feature(new Geom.Point(Proj.fromLonLat([coordinate[0], coordinate[1]])));
-                markers.getSource().addFeature(marker);
-            }
-        });
+                    var marker = new Feature(new Geom.Point(Proj.fromLonLat([coordinate[0], coordinate[1]])));
+                    markers.getSource().addFeature(marker);
+
+                    Livewire.emit('setNewCoordinate', coordinate);
+                }
+            });
+        @endauth
+
     }
 
 </script>
